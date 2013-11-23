@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8328614-33B2-4274-A011-E11917D9D894}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlannerLib</RootNamespace>
+    <AssemblyName>PlannerLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Repository">
+      <HintPath>..\..\Repository5\Repository\bin\Release\Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Event.cs" />
+    <Compile Include="Base\Event_Type.cs" />
+    <Compile Include="Base\Place.cs" />
+    <Compile Include="Base\Urgency.cs" />
+    <Compile Include="Business\BEvent.cs" />
+    <Compile Include="Business\BEvent_Type.cs" />
+    <Compile Include="Business\BUrgency.cs" />
+    <Compile Include="Business\BPlace.cs" />
+    <Compile Include="Data\Entities\DEvent.cs" />
+    <Compile Include="Data\Entities\DEvent_Type.cs" />
+    <Compile Include="Data\Entities\DPlace.cs" />
+    <Compile Include="Data\Entities\DUrgency.cs" />
+    <Compile Include="Data\Repository\SqlSEventRepository.cs" />
+    <Compile Include="Data\Repository\SqlSEvent_TypeRepository.cs" />
+    <Compile Include="Data\Repository\SqlSPlaceRepository.cs" />
+    <Compile Include="Data\Repository\SqlSUrgencyRepository.cs" />
+    <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Factory\SqlSRepositoryFactory.cs" />
+    <Compile Include="IPlannerService.cs" />
+    <Compile Include="PlannerService.cs" />
+    <Compile Include="Presentation\PEvent.cs" />
+    <Compile Include="Presentation\PEvent_Type.cs" />
+    <Compile Include="Presentation\PPlace.cs" />
+    <Compile Include="Presentation\PUrgency.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
